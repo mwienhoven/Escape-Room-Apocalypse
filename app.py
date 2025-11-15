@@ -28,7 +28,7 @@ st.title("Name Order Puzzle 🔐")
 # --------------------
 st.header("🔢 The Puzzle")
 st.write(
-    "Place all six names in the correct order. Every unique combination generates a password automatically."
+    "Place all six names in the correct order. Every unique combination generates an access code automatically."
 )
 
 # Dropdowns
@@ -43,7 +43,7 @@ st.write("---")
 
 # PASSWORD LOGIC
 if "-- select a name --" in positions:
-    st.info("Fill in all positions to generate the password.")
+    st.info("Fill in all positions to generate the access code.")
     password = ""
 else:
     if len(positions) != len(set(positions)):
@@ -55,16 +55,16 @@ else:
         else:
             password = generate_fake_password()
 
-st.text_input("Generated Password:", value=password, disabled=True)
+st.text_input("Generated access code:", value=password, disabled=True)
 
 st.write("---")
 
 # --------------------
 # PASSWORD UNLOCK AREA
 # --------------------
-st.subheader("Enter the final password to unlock the reward:")
+st.subheader("Enter the final access code to unlock the reward:")
 
-user_pw = st.text_input("Password:", type="password", key="unlock_pw")
+user_pw = st.text_input("Access Code:", type="password", key="unlock_pw")
 
 if "unlocked" not in st.session_state:
     st.session_state.unlocked = False
@@ -74,7 +74,7 @@ if st.button("Unlock"):
         st.session_state.unlocked = True
         st.balloons()
     else:
-        st.error("Incorrect password. Try again.")
+        st.error("Incorrect access code. Try again.")
 
 
 # --------------------
