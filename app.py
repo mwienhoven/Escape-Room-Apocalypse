@@ -104,3 +104,6 @@ if st.session_state.unlocked:
         st.success(
             "Marcello is de beste Oppergod die er bestaat en Hij zal ons helen! 🙌🔥"
         )
+        st.success(
+            "If you are interested in the code behind this app, check out: https://github.com/mwienhoven/Escape-Room-Apocalypse"
+        )
